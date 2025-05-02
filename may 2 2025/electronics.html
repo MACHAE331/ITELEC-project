@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Background Color</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #ffc2da;
+    }
+    .custom-navbar {
+      background-color: #8ACCD5;
+    }
+    .form-control {
+      background-color: white;
+      border: none;
+    }
+    .btn {
+      background-color: #8ACCD5;
+      border: none;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #FF90BB;
+      color: white;
+      
+    }
+    .card {
+  width: 250px;
+  margin: 65px;
+  background: #F8F8E1;
+  border: 2px solid #001d3d;
+  border-radius: 8px;
+  box-shadow: 4px 4px #000814;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+
+}
+.cards{
+    display: flex;
+
+}
+
+.card-img {
+  width: 100%;
+  height: 150px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  object-fit: contain;
+}
+
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FF90BB;
+  text-align: center;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: #FF90BB;
+  text-align: center;
+}
+
+.card-divider {
+  border: none;
+  height: 1px;
+  background: #ccc;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-viewbtn{
+  padding: 5px 10px;
+  background: #FF90BB;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  margin: 10px;
+}
+
+.card-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #FF90BB;
+}
+
+.rate-btn, .card-btn {
+  padding: 5px 10px;
+  background: #FF90BB;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rate-btn:hover, .card-btn:hover {
+  background: #FFC1DA;
+}
+
+.rating-stars {
+  display: none;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #ccc;
+  cursor: pointer;
+  word-spacing: 5px;
+}
+
+.rating-stars span {
+  transition: color 0.3s;
+}
+
+.rating-stars span:hover,
+.rating-stars span.active {
+  color: #f5a623;
+}
+
+@media (max-width: 500px) {
+  .rating-stars {
+    font-size: 16px;
+    word-spacing: 3px;
+  }
+}
+
+.thank-you-message {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #ffc300;
+  font-weight: bold;
+}
+ .carousel-item img{
+  width: 1000px;
+  height: 700px;
+  object-fit: contain;
+ }
+ .carousel{
+  margin-bottom: 100px;
+ }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="pictures/logo.png" alt="Bootstrap" width="60" height="60">
+      </a>
+      <a class="navbar-brand" href="#">Product Rating</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="electronics.html     ">Electronics</a></li>
+              <li><a class="dropdown-item" href="beauty.html">Beauty</a></li>
+              <li><a class="dropdown-item" href="sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Deals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn " type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="cards">
+    <div class="card">
+      <div class="card-img">
+        <img src="clinique-stay-matte-sheer-pressed-powder-04-stay-honey-7-5g.avif" alt="Product">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Powder</div>
+        <div class="card-subtitle">Clinique Stay-Matte Sheer Pressed Powder 04 Stay Honey 7.6g.</div>
+        <hr class="card-divider">
+        <div class="card-footer">
+          <div class="card-price">₱3,291</div>
+          <button class="rate-btn" onclick="toggleRating(this)">Rate</button>
+          <button class="card-btn">Buy</button>
+        </div>
+        <div class="card-view">
+        <button class="card-viewbtn">View Rating</button>
+          <button class="card-viewbtn">View Reviews</button>
+        </div>
+        <div class="rating-stars" style="display: none;">
+          <span onclick="rate(this, 1)">★</span>
+          <span onclick="rate(this, 2)">★</span>
+          <span onclick="rate(this, 3)">★</span>
+          <span onclick="rate(this, 4)">★</span>
+          <span onclick="rate(this, 5)">★</span>
+        </div>
+        <div class="thank-you-message" style="display: none;"></div>
+      </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-img">
+          <img src="covermark-luminous-cream-for-face-skin-whitening-multi-valent-system-30ml.avif" alt="Product">
+        </div>
+        <div class="card-content">
+          <div class="card-title">Skin Whitening</div>
+          <div class="card-subtitle">Covermark Luminous Skin Whitening Cream for Face SPF15 30ml.</div>
+          <hr class="card-divider">
+          <div class="card-footer">
+            <div class="card-price">₱4,115</div>
+            <button class="rate-btn" onclick="toggleRating(this)">Rate</button>
+            <button class="card-btn">Buy</button>
+          </div>
+          <div class="card-view">
+            <button class="card-viewbtn">View Rating</button>
+              <button class="card-viewbtn">View Reviews</button>
+            </div>
+          <div class="rating-stars" style="display: none;">
+            <span onclick="rate(this, 1)">★</span>
+            <span onclick="rate(this, 2)">★</span>
+            <span onclick="rate(this, 3)">★</span>
+            <span onclick="rate(this, 4)">★</span>
+            <span onclick="rate(this, 5)">★</span>
+          </div>
+          <div class="thank-you-message" style="display: none;"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="l-a-girl-lip-oil-nourishing-gloss-sheer-watermelon-3ml.avif " alt="Product">
+        </div>
+        <div class="card-content">
+          <div class="card-title">Lip Gloss</div>
+          <div class="card-subtitle">L.A. Girl Lip Oil Nourishing Gloss Sheer Watermelon 3ml.</div>
+          <hr class="card-divider">
+          <div class="card-footer">
+            <div class="card-price">₱759.22</div>
+            <button class="rate-btn" onclick="toggleRating(this)">Rate</button>
+            <button class="card-btn">Buy</button>
+          </div>
+          <div class="card-view">
+            <button class="card-viewbtn">View Rating</button>
+              <button class="card-viewbtn">View Reviews</button>
+            </div>
+          <div class="rating-stars" style="display: none;">
+            <span onclick="rate(this, 1)">★</span>
+            <span onclick="rate(this, 2)">★</span>
+            <span onclick="rate(this, 3)">★</span>
+            <span onclick="rate(this, 4)">★</span>
+            <span onclick="rate(this, 5)">★</span>
+          </div>
+          <div class="thank-you-message" style="display: none;"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="dermacol-24h-control-long-lasting-make-up-foundation-3-30ml.avif" alt="Product">
+        </div>
+        <div class="card-content">
+          <div class="card-title">Foundation</div>
+          <div class="card-subtitle">Dermacol 24h Control Long Lasting Makeup Foundation 3 30ml</div>
+          <hr class="card-divider">
+          <div class="card-footer">
+            <div class="card-price">₱983.82</div>
+            <button class="rate-btn" onclick="toggleRating(this)">Rate</button>
+            <button class="card-btn">Buy</button>
+          </div>
+          <div class="card-view">
+            <button class="card-viewbtn">View Rating</button>
+              <button class="card-viewbtn">View Reviews</button>
+            </div>
+          <div class="rating-stars" style="display: none;">
+            <span onclick="rate(this, 1)">★</span>
+            <span onclick="rate(this, 2)">★</span>
+            <span onclick="rate(this, 3)">★</span>
+            <span onclick="rate(this, 4)">★</span>
+            <span onclick="rate(this, 5)">★</span>
+          </div>
+          <div class="thank-you-message" style="display: none;"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="medik8-total-moisture-daily-facial-cream-50ml.avif" alt="Product">
+        </div>
+        <div class="card-content">
+          <div class="card-title">Moisturizer</div>
+          <div class="card-subtitle">Medik8 Total Moisture Daily Facial Cream 50ml.</div>
+          <hr class="card-divider">
+          <div class="card-footer">
+            <div class="card-price">₱3,933</div>
+            <button class="rate-btn" onclick="toggleRating(this)">Rate</button>
+            <button class="card-btn">Buy</button>
+          </div>
+          <div class="card-view">
+            <button class="card-viewbtn">View Rating</button>
+              <button class="card-viewbtn">View Reviews</button>
+            </div>
+          <div class="rating-stars" style="display: none;">
+            <span onclick="rate(this, 1)">★</span>
+            <span onclick="rate(this, 2)">★</span>
+            <span onclick="rate(this, 3)">★</span>
+            <span onclick="rate(this, 4)">★</span>
+            <span onclick="rate(this, 5)">★</span>
+          </div>
+          <div class="thank-you-message" style="display: none;"></div>
+        </div>
+      </div>
+  </div>
+
+  <div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="clinique-stay-matte-sheer-pressed-powder-04-stay-honey-7-5g.avif" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="l-a-girl-lip-oil-nourishing-gloss-sheer-watermelon-3ml.avif" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="medik8-total-moisture-daily-facial-cream-50ml.avif" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<script>
+   function toggleRating(button) {
+  var card = button.closest('.card');
+  var stars = card.querySelector('.rating-stars');
+  
+  stars.style.display = 'block';
+
+  button.style.display = 'none';
+}
+
+function rate(starElement, star) {
+  var card = starElement.closest('.card');
+  var stars = card.querySelectorAll('.rating-stars span');
+  
+  stars.forEach(function(s, index) {
+    if (index < star) {
+      s.classList.add('active');
+    } else {
+      s.classList.remove('active');
+    }
+  });
+
+  var thankYou = card.querySelector('.thank-you-message');
+  thankYou.innerText = "Thank you for your feedback! You rated " + star + " star" + (star > 1 ? "s" : "") + "!";
+  thankYou.style.display = 'block';
+
+  var ratingStars = card.querySelector('.rating-stars');
+  ratingStars.style.display = 'none';
+}
+
+    </script>
+    
+</html>
