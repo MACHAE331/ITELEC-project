@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NaturaMyst</title>
+  <link rel="shortcut icon" type="x-icon" href="NaturaMyst.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #ffc2da;
+    }
+    .custom-navbar {
+      background-color: #FFD0C7;
+    }
+    .form-control {
+      background-color: white;
+      border: none;
+    }
+    .btn {
+      background-color: #FFD0C7;
+      border: none;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #FF90BB;
+      color: white;
+      
+    }
+    .card {
+  width: 500px;
+  margin: 45px;
+  background: #F8F8E1;
+  border: 2px solid #950159;
+  border-radius: 10px;
+  box-shadow: 4px 4px #670033;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+
+}
+.cards{
+    display: flex;
+
+}
+
+.card-img {
+  width: 100%;
+  height: 150px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  object-fit: contain;
+}
+
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FF90BB;
+  text-align: center;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: #FF90BB;
+  text-align: center;
+}
+
+.card-divider {
+  border: none;
+  height: 1px;
+  background: #ccc;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-viewbtn{
+  padding: 5px 10px;
+  background: #FF90BB;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  margin: 10px;
+}
+
+.card-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #FF90BB;
+}
+
+.rate-btn, .card-btn {
+  padding: 5px 10px;
+  background: #FF90BB;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rate-btn:hover, .card-btn:hover {
+  background: #FFC1DA;
+}
+
+.rating-stars {
+  display: none;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #ccc;
+  cursor: pointer;
+  word-spacing: 5px;
+}
+
+.rating-stars span {
+  transition: color 0.3s;
+}
+
+.rating-stars span:hover,
+.rating-stars span.active {
+  color: #f5a623;
+}
+
+@media (max-width: 500px) {
+  .rating-stars {
+    font-size: 16px;
+    word-spacing: 3px;
+  }
+}
+
+.thank-you-message {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #ffc300;
+  font-weight: bold;
+}
+ .carousel-item img{
+  width: 1000px;
+  height: 700px;
+  object-fit: contain;
+ }
+ .carousel{
+  margin-bottom: 100px;
+ }
+ .btn{
+  margin: 5px;
+  background-color:#FF90BB ;
+  color: white;
+ }
+ .footer-basic {
+  padding:40px 0;
+  background-color:#FFD0C7;
+  color:#FF90BB;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+.carousel-caption {
+  color: #950351;
+ font-weight: 500;
+}
+.navbar-brand {
+  color: #FF90BB;
+}
+.nav-link {
+  color: #FF90BB;
+}
+
+.dropdown-item {
+  color: #FF90BB;
+}
+.nav-item .nav-link {
+  color: #FF90BB;
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="NaturaMyst.png" alt="Bootstrap" width="60" height="60">
+      </a>
+      <a class="navbar-brand" href="#">NaturaMyst</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="beauty.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">  
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="electronics.html">Electronics</a></li>
+              <li><a class="dropdown-item" href="beauty.html">Beauty</a></li>
+              <li><a class="dropdown-item" href="sports.html">Sports</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Deals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn " type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="cards">
+    <div class="card">
+      <div class="card-img">
+        <img src="powder.webp" alt="Product">
+      </div>
+      <div class="card-content">
+        <div class="card-title">Powder</div>
+        <div class="card-subtitle">Clinique Stay-Matte Sheer Pressed Powder 04 Stay Honey 7.6g.</div>
+        <hr class="card-divider">
+        <div class="card-footer">
+          <div class="card-price">₱3,291</div>
+          <button class="rate-btn" onclick="toggleRating(this)">Rate</button>
+          <button class="card-btn">Buy</button>
+        </div>
+        <div class="card-view">
+          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#ratingspow">
+            View Ratings
+          </button>
+          <div class="modal fade" id="ratingspow" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">RATING</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ⭐⭐⭐☆☆ (3.0 average rating)<br>
+                  Based on 54 customer ratings.  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#reviewspow">
+            View reviews
+          </button>
+          <div class="modal fade" id="reviewspow" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">RATING</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <ul>
+                    <li>Maria L ⭐️⭐️⭐️⭐️⭐️ "I absolutely love this powder! It keeps my oily skin matte all day without looking cakey. Shade 04 Stay Honey matches my skin tone perfectly."</li>
+                      <li>Jasmine C. ⭐️⭐️⭐️⭐️ "Very lightweight and natural-looking. Great for touch-ups throughout the day. My only issue is the compact could have a better puff."</li>
+                      <li>Andrea M. ⭐️⭐️⭐️⭐️⭐️"Best powder I've used! Controls shine and gives me a smooth, flawless finish. Great for humid weather too."</li>
+                      <li>Nina V. ⭐️⭐️⭐️ "Good coverage and texture, but I wish it lasted longer. I find myself reapplying by midday."</li>
+                      <li>Tina H. ⭐️⭐️⭐️⭐️⭐️ "Clinique never disappoints. This pressed powder is a staple in my makeup bag. It doesnt clog my pores and feels very light."</li>
+                      <li>Lara P. ⭐️⭐️⭐️⭐️ "The color Stay Honey is perfect for medium skin tones. The matte finish holds up pretty well even during long work days."</li>
+                      <li>Emily S. ⭐️⭐️⭐️⭐️⭐️ "I have combination skin and this powder works wonders. It absorbs oil and leaves a smooth, natural finish without drying me out."</li>
+                      <li>Chloe R. ⭐️⭐️⭐️⭐️ "Nice product overall. It gives a sheer coverage, so I still use concealer underneath. But for a powder, it's very reliable."</li>
+                      <li>Grace T. ⭐️⭐️⭐️⭐️⭐️ "This powder saved my makeup routine. Perfect for setting foundation and great on its own too. Its been my go-to for months!"</li>
+                      <li>Denise K. ⭐️⭐️⭐️⭐️⭐️ "Silky texture, great coverage, and long-lasting matte finish. Highly recommend for anyone with oily or combination skin!"</li>
+                  </ul> 
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        <div class="rating-stars" style="display: none;">
+          <span onclick="rate(this, 1)">★</span>
+          <span onclick="rate(this, 2)">★</span>
+          <span onclick="rate(this, 3)">★</span>
+          <span onclick="rate(this, 4)">★</span>
+          <span onclick="rate(this, 5)">★</span>
+        </div>
+        <div class="thank-you-message" style="display: none;"></div>
+      </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-img">
+          <img src="skin whitening.webp" alt="Product">
+        </div>
+        <div class="card-content">
+          <div class="card-title">Skin Whitening</div>
+          <div class="card-subtitle">Covermark Luminous Skin Whitening Cream for Face SPF15 30ml.</div>
+          <hr class="card-divider">
+          <div class="card-footer">
+            <div class="card-price">₱4,115</div>
+            <button class="rate-btn" onclick="toggleRating(this)">Rate</button>
+            <button class="card-btn">Buy</button>
+          </div>
+          <div class="card-view">
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#ratingsskin">
+              View Ratings
+            </button>
+            <div class="modal fade" id="ratingsskin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">RATING</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    ⭐⭐⭐⭐☆ (4.0 average rating)<br>
+                    Based on 162 customer ratings.  
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#reviewsskin">
+              View reviews
+            </button>
+            <div class="modal fade" id="reviewsskin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">RATING</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <ul>
+                      <li>Maria L ⭐️⭐️⭐️⭐️⭐️ ""Ive been using this cream for a month now and I can already see a brighter, more even skin tone. It's gentle on my sensitive skin and gives a nice glow."</li>
+                      <li>Jasmine C. ⭐️⭐️⭐️⭐️ "Great product! It feels light on the skin and the SPF15 is a nice bonus. My skin looks healthier and more luminous."</li>
+                      <li>Andrea M. ⭐️⭐️⭐️⭐️⭐️"Covermark nailed it with this cream. It lightened my dark spots and gives my face a radiant finish without looking oily."</li>
+                      <li>Nina V. ⭐️⭐️⭐️ "Been using this daily under my makeup. It works well as a base and I noticed my skin looks clearer over time."</li>
+                      <li>Tina H. ⭐️⭐️⭐️⭐️⭐️ "My favorite whitening cream so far! No breakouts, no strong scent, and my skin tone looks more balanced and smooth."</li>
+                      <li>Lara P. ⭐️⭐️⭐️⭐️ "It’s moisturizing and adds a glow, but I haven’t seen major whitening effects yet. Still hopeful with continued use."</li>
+                      <li>Emily S. ⭐️⭐️⭐️⭐️⭐️ "Lightweight, non-greasy, and effective. My skin feels softer and looks brighter after just two weeks!"</li>
+                      <li>Chloe R. ⭐️⭐️⭐️⭐️ "The cream absorbs quickly and doesn’t leave a white cast. I love how it subtly brightens my skin over time."</li>
+                      <li>Grace T. ⭐️⭐️⭐️⭐️⭐️ "This product is worth every peso. It helped fade my acne scars and gives me a healthy, glowing complexion."</li>
+                      <li>Denise K. ⭐️⭐️⭐️⭐️⭐️ "I like the creamy texture and mild scent. The SPF is a plus for daytime use. It’s now a part of my daily skincare routine."</li>
+                    </ul> 
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          <div class="rating-stars" style="display: none;">
+            <span onclick="rate(this, 1)">★</span>
+            <span onclick="rate(this, 2)">★</span>
+            <span onclick="rate(this, 3)">★</span>
+            <span onclick="rate(this, 4)">★</span>
+            <span onclick="rate(this, 5)">★</span>
+          </div>
+          <div class="thank-you-message" style="display: none;"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="lip gloss.webp" alt="Product">
+        </div>
+        <div class="card-content">
+          <div class="card-title">Lip Gloss</div>
+          <div class="card-subtitle">L.A. Girl Lip Oil Nourishing Gloss Sheer Watermelon 3ml.</div>
+          <hr class="card-divider">
+          <div class="card-footer">
+            <div class="card-price">₱759.22</div>
+            <button class="rate-btn" onclick="toggleRating(this)">Rate</button>
+            <button class="card-btn">Buy</button>
+          </div>
+          <div class="card-view">
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#ratingslip">
+              View Ratings
+            </button>
+            <div class="modal fade" id="ratingslip" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">RATING</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    ⭐⭐⭐⭐⭐ (5.0 average rating)<br>
+                    Based on 200 customer ratings.  
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#reviewslip">
+              View reviews
+            </button>
+            <div class="modal fade" id="reviewslip" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">RATING</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <ul>
+                      <li>Maria L ⭐️⭐️⭐️⭐️⭐️ "Super moisturizing and smells amazing! The sheer watermelon tint gives my lips a natural glossy look. I use it every day!"</li>
+                      <li>Jasmine C. ⭐️⭐️⭐️⭐️ "Love the juicy feel of this lip oil. It’s not sticky at all and makes my lips look plump and healthy."</li>
+                      <li>Andrea M. ⭐️⭐️⭐️⭐️⭐️ "This is the best affordable lip oil I’ve tried. Leaves my lips soft and shiny, plus the scent is so yummy!"</li>
+                      <li>Nina V. ⭐️⭐️⭐️ "Great shine and hydration. I just wish it lasted longer, but for the price, it's totally worth it."</li>
+                      <li>Tina H. ⭐️⭐️⭐️⭐️⭐️ "Great shine and hydration. I just wish it lasted longer, but for the price, it's totally worth it."</li>
+                      <li>Lara P. ⭐️⭐️⭐️⭐️ "It feels good on the lips and smells fruity, but I expected more color. It’s more clear than sheer tint."</li>
+                      <li>Emily S. ⭐️⭐️⭐️⭐️⭐️ "Obsessed with this lip oil! My lips feel nourished and soft even after it wears off. The watermelon scent is so refreshing."</li>
+                      <li>Chloe R. ⭐️⭐️⭐️⭐️ "Not sticky at all, which is a big plus. It gives just the right amount of shine for everyday wear."</li>
+                      <li>Grace T. ⭐️⭐️⭐️⭐️⭐️ "L.A. Girl nailed it! Hydration, scent, shine—all in one tube. This gloss feels high-end for a budget price."</li>
+                      <li>Denise K. ⭐️⭐️⭐️⭐️⭐️ "Really nice lip oil with a soft watermelon scent. It’s not heavy and works great as a gloss over lipstick too."</li>
+                    </ul> 
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          <div class="rating-stars" style="display: none;">
+            <span onclick="rate(this, 1)">★</span>
+            <span onclick="rate(this, 2)">★</span>
+            <span onclick="rate(this, 3)">★</span>
+            <span onclick="rate(this, 4)">★</span>
+            <span onclick="rate(this, 5)">★</span>
+          </div>
+          <div class="thank-you-message" style="display: none;"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="foundation.webp" alt="Product">
+        </div>
+        <div class="card-content">
+          <div class="card-title">Foundation</div>
+          <div class="card-subtitle">Dermacol 24h Control Long Lasting Makeup Foundation 3 30ml</div>
+          <hr class="card-divider">
+          <div class="card-footer">
+            <div class="card-price">₱983.82</div>
+            <button class="rate-btn" onclick="toggleRating(this)">Rate</button>
+            <button class="card-btn">Buy</button>
+          </div>
+          <div class="card-view">
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#ratingsfoun">
+              View Ratings
+            </button>
+            <div class="modal fade" id="ratingsfoun" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">RATING</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    ⭐⭐⭐☆☆ (4.0 average rating)<br>
+                    Based on 111 customer ratings.  
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#reviewsfoun">
+              View reviews
+            </button>
+            <div class="modal fade" id="reviewsfoun" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">RATING</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <ul>
+                      <li>Maria L ⭐️⭐️⭐️⭐️⭐️ "Super full coverage! It hides all my blemishes and dark spots without feeling heavy. Shade 3 matches my skin perfectly!"</li>
+                      <li>Jasmine C. ⭐️⭐️⭐️⭐️ "This foundation lasts the whole day—even through sweat and humidity. I love how smooth it looks on my skin."</li>
+                      <li>Andrea M. ⭐️⭐️⭐️⭐️⭐️"A little goes a long way! One pump is enough for full-face coverage. Great for special occasions and long days."</li>
+                      <li>Nina V. ⭐️⭐️⭐️ "Good coverage and doesnt oxidize much. I just wish it came with a pump for easier application."</li>
+                      <li>Tina H. ⭐️⭐️⭐️⭐️⭐️ "Ive tried many long-lasting foundations, and this one truly holds up for hours! It feels lightweight but gives a flawless finish."</li>
+                      <li>Lara P. ⭐️⭐️⭐️⭐️ "Great foundation for oily skin. It stays matte and doesnt slide off during the day. I use it daily now!"</li>
+                      <li>Emily S. ⭐️⭐️⭐️⭐️⭐️ "It blends easily and covers my acne scars so well. Definitely one of the best drugstore foundations out there!"</li>
+                      <li>Chloe R. ⭐️⭐️⭐️⭐️ "The coverage is good, but it can feel a bit thick if you apply too much. Better to use a sponge or brush to blend well."</li>
+                      <li>Grace T. ⭐️⭐️⭐️⭐️⭐️ "Perfect for long events or photo shoots. My skin looks poreless and smooth, even after hours of wear."</li>
+                      <li>Denise K. ⭐️⭐️⭐️⭐️⭐️ "Impressive staying power! I wore it for a full 12-hour day, and it still looked great. Highly recommend for oily or combination skin."</li>
+                    </ul> 
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          <div class="rating-stars" style="display: none;">
+            <span onclick="rate(this, 1)">★</span>
+            <span onclick="rate(this, 2)">★</span>
+            <span onclick="rate(this, 3)">★</span>
+            <span onclick="rate(this, 4)">★</span>
+            <span onclick="rate(this, 5)">★</span>
+          </div>
+          <div class="thank-you-message" style="display: none;"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="moisturizer.webp" alt="Product">
+        </div>
+        <div class="card-content">
+          <div class="card-title">Moisturizer</div>
+          <div class="card-subtitle">Medik8 Total Moisture Daily Facial Cream 50ml.</div>
+          <hr class="card-divider">
+          <div class="card-footer">
+            <div class="card-price">₱3,933</div>
+            <button class="rate-btn" onclick="toggleRating(this)">Rate</button>
+            <button class="card-btn">Buy</button>
+          </div>
+          <div class="card-view">
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#ratingsmois">
+              View Ratings
+            </button>
+            <div class="modal fade" id="ratingsmois" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">RATING</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    ⭐⭐⭐⭐☆ (4.0 average rating)<br>
+                    Based on 362 customer ratings.  
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#reviewsmois">
+              View reviews
+            </button>
+            <div class="modal fade" id="reviewsmois" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">RATING</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <ul>
+                      <li>Maria L: ⭐️⭐️⭐️⭐️⭐️ "My skin has never felt this soft and hydrated! I use this every morning and night—super lightweight yet deeply moisturizing."</li>
+                      <li>Jasmine C: ⭐️⭐️⭐️⭐️ "Great daily moisturizer! Absorbs fast and doesnt leave a greasy feeling. My skin stays smooth all day."</li>
+                      <li>Andrea M: ⭐️⭐️⭐️⭐️⭐️"Perfect for my dry, sensitive skin. It calms redness and gives me a healthy glow. Worth every cent!"</li>
+                      <li>Nina V: ⭐️⭐️⭐️ "I love how gentle this cream is. It keeps my face moisturized without clogging pores or causing breakouts."</li>
+                      <li>Tina H: ⭐️⭐️⭐️⭐️⭐️ Medik8 really delivers! This cream hydrates well and sits nicely under makeup. A must-have in my skincare routine."</li>
+                      <li>Lara P: ⭐️⭐️⭐️⭐️ "Nice consistency—rich but not heavy. My skin feels smooth and bouncy after applying. Slight fragrance but not overpowering."</li>
+                      <li>Emily S: ⭐️⭐️⭐️⭐️⭐️ "I have combination skin and this works perfectly. It hydrates the dry areas without making my T-zone oily."</li>
+                      <li>Chloe R: ⭐️⭐️⭐️⭐️ "Good moisturizer, but I expected more glow. Its great for basic hydration, just not very rich for extra dry skin."</li>
+                      <li>Grace T: ⭐️⭐️⭐️⭐️⭐️ "My holy grail moisturizer! No irritation, no breakouts—just smooth, healthy skin. Ill repurchase for sure."</li>
+                      <li>Denise K: ⭐️⭐️⭐️⭐️⭐️ "Love the texture and how it instantly refreshes my face. Its not sticky and works well under sunscreen or makeup."</li>
+                    </ul> 
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          <div class="rating-stars" style="display: none;">
+            <span onclick="rate(this, 1)">★</span>
+            <span onclick="rate(this, 2)">★</span>
+            <span onclick="rate(this, 3)">★</span>
+            <span onclick="rate(this, 4)">★</span>
+            <span onclick="rate(this, 5)">★</span>
+          </div>
+          <div class="thank-you-message" style="display: none;"></div>
+        </div>
+      </div>
+  </div>
+
+  <div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="gucci.avif" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Gucci Beauty </h5>
+        <p>The world of Gucci Beauty envisions true expression within a line of makeup, men's fragrances and women's fragrances.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="kevin murphy.avif" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Kevin Murphy</h5>
+        <p>The same philosophy as skincare, KEVIN.MURPHY products are weightlessly designed to deliver performance, strength and longevity.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="bobby brown.avif" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Bobbi Brown</h5>
+        <p> Experience Luxe Shine Intense Lipstick, a new dimension in lip color.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="footer-basic">
+  <footer>
+    <div class="social">
+      <a href="#"><img src="icons8-facebook-50.png" alt=""></a>
+      <a href="#"><img src="icons8-instagram-50.png" alt=""></a>
+      <a href="#"><img src="icons8-x-50.png" alt=""></a>
+      <a href="#"><img src="icons8-github-50.png" alt=""></a>
+    </div>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Home</a></li>
+      <li class="list-inline-item"><a href="#">Services</a></li>
+      <li class="list-inline-item"><a href="#">About</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+    </ul>
+    <p class="copyright">Company Name © 2018</p>
+  </footer>
+</div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<script>
+   function toggleRating(button) {
+  var card = button.closest('.card');
+  var stars = card.querySelector('.rating-stars');
+  
+  stars.style.display = 'block';
+
+  button.style.display = 'none';
+}
+
+function rate(starElement, star) {
+  var card = starElement.closest('.card');
+  var stars = card.querySelectorAll('.rating-stars span');
+  
+  stars.forEach(function(s, index) {
+    if (index < star) {
+      s.classList.add('active');
+    } else {
+      s.classList.remove('active');
+    }
+  });
+
+  var thankYou = card.querySelector('.thank-you-message');
+  thankYou.innerText = "Thank you for your feedback! You rated " + star + " star" + (star > 1 ? "s" : "") + "!";
+  thankYou.style.display = 'block';
+
+  var ratingStars = card.querySelector('.rating-stars');
+  ratingStars.style.display = 'none';
+}
+
+    </script>
+    
+</html>
